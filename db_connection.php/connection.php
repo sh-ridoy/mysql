@@ -1,5 +1,5 @@
 <?php
-$link =  mysqli_connect("localhost","root","","batch 70" );
+$link =  mysqli_connect("localhost","root","","ridu" );
 
 if(!$link){
    die('Could not connect: ');
