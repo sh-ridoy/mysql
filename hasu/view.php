@@ -1,11 +1,12 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "crud");
-$data = mysqli_query($connect, "SELECT * FROM users");
+include 'db.php';
+
+$data = mysqli_query($connect, "SELECT * FROM student");
 
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
 
-    mysqli_query($connect,"DELETE FROM users WHERE id=$id");
+    mysqli_query($connect,"DELETE FROM student WHERE id=$id");
     header("location:view.php");
 }
 ?>
@@ -47,7 +48,6 @@ if(isset($_GET['delete'])){
 <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
 <a href="view.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
 </td>
-
 </tr>
 <?php } ?>
 

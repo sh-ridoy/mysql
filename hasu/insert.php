@@ -1,5 +1,5 @@
 <?php
-$connect= mysqli_connect("localhost","root","","crud");
+include 'db.php';
 
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
@@ -7,11 +7,11 @@ if(isset($_POST['submit'])){
     $contact = $_POST['contact'];
     $address = $_POST['address'];
 
-    $query = "INSERT INTO users(name,email,contact,address) 
+    $query = "INSERT INTO student(name,email,contact,address) 
               VALUES ('$name','$email','$contact','$address')";
-    
+
     if(mysqli_query($connect,$query)){
-        header("location: view.php");
+        header("location:view.php");
     }
 }
 ?>
